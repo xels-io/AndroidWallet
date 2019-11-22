@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorPrimary">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/wallet_created"
+              android:textSize="@dimen/text_size_title"
+              android:textColor="@color/whiteColor"
+              android:gravity="center"
+              android:layout_marginTop="@dimen/layout_margin_top_large"/>
+
+    <TextView android:layout_width="@dimen/textview_width_large"
+              android:layout_height="@dimen/textview_height_large"
+              android:text="@string/your_wallet_has_been_created"
+              android:textSize="@dimen/toolbar_headline_text_size"
+              android:textColor="@color/whiteColor"
+              android:layout_marginTop="@dimen/layout_margin_top_small"
+              android:layout_marginBottom="@dimen/layout_margin_top_small"
+              android:gravity="center"
+              android:layout_gravity="center"/>
+
+    <Button
+            android:layout_width="@dimen/btn_ok_width"
+            android:layout_height="@dimen/btn_ok_height"
+            android:text="@string/ok"
+            android:textSize="@dimen/btn_ok_text_size"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/ok_btn_background"
+            android:layout_gravity="center"
+            android:id="@+id/ok"/>
+
+
+</LinearLayout>

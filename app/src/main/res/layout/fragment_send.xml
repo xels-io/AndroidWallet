@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/whiteColor"
+            android:id="@+id/layout"
+    >
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_available"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/layout_margin_top"/>
+
+        <TextView
+                android:id="@+id/amountAvailableTxtView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/layout_margin_small"
+                android:maxLines="1"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/layout_margin_left"
+                android:layout_marginRight="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_margin_small"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/amount"
+                    android:textSize="@dimen/text_size"/>
+
+            <EditText
+                    android:id="@+id/amountEditTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/restore_wallet_field_background"
+                    android:textSize="@dimen/text_size_small"
+                    android:paddingLeft="@dimen/padding_left"
+                    android:hint="@string/_0_00_xels"
+                    android:text=""
+                    android:maxLines="1"
+                    android:inputType="numberDecimal"
+
+            />
+
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/layout_margin_left"
+                android:layout_marginRight="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/bottom_line_height">
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/destination_address"
+                    android:textSize="@dimen/text_size"
+                    android:layout_marginBottom="@dimen/layout_margin_small"/>
+
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:weightSum="2"
+                          android:orientation="horizontal">
+
+                <EditText
+                        android:id="@+id/addressTxtView"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edittext_height"
+                        android:background="@drawable/restore_wallet_field_background"
+                        android:textSize="@dimen/text_size_small"
+                        android:paddingLeft="@dimen/padding_left"
+                        android:hint="@string/please_enter_the_destination_address_here"
+                        android:maxLength="34"
+                        android:text=""
+                        android:inputType="text"
+                        android:layout_weight="2"
+                        android:layout_gravity="center_vertical"
+                        android:maxLines="1"
+
+
+                />
+                <Button android:layout_width="20dp" android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_settings_overscan_green_24dp"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/scanBarCodeBtn"
+                        android:visibility="visible"
+                />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/layout_margin_left"
+                android:layout_marginRight="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/bottom_line_height">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/transaction_fee"
+                    android:textSize="@dimen/text_size"
+                    android:layout_marginBottom="@dimen/layout_margin_small"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/feeEditText"
+                    android:text="@string/please_enter_a_valid_fee"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/darkRed"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/layout_margin_left"
+                android:layout_marginRight="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/bottom_line_height">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Wallet Password"
+                    android:textSize="@dimen/text_size"
+                    android:layout_marginBottom="@dimen/layout_margin_small"/>
+
+            <EditText
+                    android:id="@+id/passwordEditTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/restore_wallet_field_background"
+                    android:textSize="@dimen/text_size_small"
+                    android:paddingLeft="@dimen/padding_left"
+                    android:hint="@string/please_enter_your_wallet_password"
+                    android:text=""
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/layout_margin_left"
+                android:layout_marginRight="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin"
+                android:layout_marginBottom="@dimen/layout_margin"
+                android:weightSum="2">
+
+            <Button
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:background="@drawable/cancel_btn_background"
+                    android:textColor="@color/blackColor"
+                    android:layout_marginRight="@dimen/padding_left"
+                    android:paddingBottom="@dimen/layout_margin_small"
+                    android:paddingTop="@dimen/layout_margin_small"
+            />
+            <Button
+                    android:id="@+id/sendBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send"
+                    android:textAllCaps="false"
+                    android:background="@drawable/login_btn_background"
+                    android:textColor="@color/whiteColor"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/padding_left"
+                    android:paddingBottom="@dimen/layout_margin_small"
+                    android:paddingTop="@dimen/layout_margin_small"
+            />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

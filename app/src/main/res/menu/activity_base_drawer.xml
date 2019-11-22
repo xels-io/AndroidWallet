@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashBoard"
+            android:icon="@drawable/ic_dashboard_unselected"
+            android:title="@string/text_dashboard"
+            />
+        <item
+            android:id="@+id/latestTransaction"
+            android:icon="@drawable/ic_coin_green_01"
+            android:title="@string/latest_transaction"/>
+        <item
+            android:id="@+id/receive"
+            android:icon="@drawable/ic_receive_unselected"
+            android:title="@string/text_receive"/>
+        <item
+            android:id="@+id/send"
+            android:icon="@drawable/ic_send_unselected"
+            android:title="@string/send"/>
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/text_logout"/>
+    </group>
+
+</menu>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:fillViewport="true"
+             android:clickable="true"
+             android:focusable="true"
+             android:padding="@dimen/field_padding_margin"
+             android:background="@color/share_trip_btn_bg"
+             tools:context=".view.fragment.HistoryDetailsFragment">
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                 android:layout_margin="@dimen/tv_margin_top" android:background="@drawable/bg_history_details" >
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:fillViewport="true">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/field_padding_margin"
+                    tools:context=".view.fragment.HistoryDetailsFragment">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="@string/text_tran_details"
+                          android:textSize="@dimen/text_size_title"
+                          android:padding="@dimen/toolbar_headline_text_size"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/layout_type"
+                              android:orientation="horizontal"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="@string/text_type"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textSize="@dimen/text_size"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:id="@+id/tv_type"
+                              android:layout_weight="1.5" tools:text="@tools:sample/cities"
+                              android:textSize="@dimen/text_size"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/layout_total_amount"
+                              android:orientation="horizontal"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="@string/text_total_amount"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textSize="@dimen/text_size"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:id="@+id/tv_total_amount"
+                              android:layout_weight="1.5" tools:text="@tools:sample/cities"
+
+                              android:textSize="@dimen/text_size"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/layout_amount_sent"
+                              android:orientation="horizontal"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="@string/text_amount_sent"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textSize="@dimen/text_size"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:id="@+id/tv_amount_sent"
+                              android:layout_weight="1.5" tools:text="@tools:sample/cities"
+                              android:textColor="@android:color/holo_red_light"
+                              android:textSize="@dimen/text_size"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/layout_fee"
+                              android:orientation="horizontal"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="@string/text_fee"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textSize="@dimen/text_size"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:id="@+id/tv_fee"
+                              android:layout_weight="1.5" tools:text="@tools:sample/cities"
+                              android:textColor="@android:color/holo_red_light"
+                              android:textSize="@dimen/text_size"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="horizontal"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="@string/text_date"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textSize="@dimen/text_size"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:id="@+id/tv_date"
+                              android:layout_weight="1.5" tools:text="@tools:sample/cities"
+                              android:textSize="@dimen/text_size"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/layout_block"
+                              android:orientation="horizontal"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="@string/text_block"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textSize="@dimen/text_size"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:id="@+id/tv_block"
+                              android:layout_weight="1.5" tools:text="@tools:sample/cities"
+                              android:textSize="@dimen/text_size"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="horizontal"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="@string/text_confirmation"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textSize="@dimen/text_size"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                              android:id="@+id/tv_confirmation"
+                              android:layout_weight="1.5" tools:text="@tools:sample/cities"
+                              android:textSize="@dimen/text_size"
+                              android:padding="@dimen/layout_margin_small"
+                              android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="@dimen/field_padding_margin">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="@string/text_transaction_id"
+                              android:textSize="@dimen/toolbar_headline_text_size"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:text="@string/text_tran_details"
+                                  android:padding="@dimen/field_padding_margin">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/tv_tran_id"
+                                  android:layout_weight="4" tools:text="@tools:sample/first_names"
+                                  android:layout_gravity="center"
+                                  android:padding="@dimen/field_padding_margin"
+                                  android:textSize="@dimen/text_size"/>
+
+                        <ImageButton android:layout_width="0dp" android:layout_height="wrap_content"
+                                     android:id="@+id/btn_copy"
+                                     android:src="@drawable/ic_copy"
+                                     android:padding="@dimen/field_padding_margin"
+                                     android:layout_gravity="center"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/bg_history_details_copy_btn"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/btn_ok"
+                        android:padding="@dimen/field_padding_margin"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_margin="@dimen/field_padding_margin"
+                        android:textSize="@dimen/text_size"
+                        android:background="@drawable/bg_history_details_btn"
+                        android:text="@string/ok"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,44 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">26dp</dimen>
+    <dimen name="activity_vertical_margin">26dp</dimen>
+    <dimen name="nav_header_vertical_spacing">12dp</dimen>
+    <dimen name="nav_header_height">282dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+    <dimen name="layout_margin_small">8dp</dimen>
+    <dimen name="layout_margin">22dp</dimen>
+    <dimen name="layout_margin_left">54dp</dimen>
+    <dimen name="toolbar_headline_text_size">28sp</dimen>
+    <dimen name="text_size">22sp</dimen>
+    <dimen name="dashboard_title_text_size">38sp</dimen>
+    <dimen name="layout_margin_top_small">92dp</dimen>
+    <dimen name="layout_margin_top">144dp</dimen>
+    <dimen name="layout_margin_top_large">252dp</dimen>
+    <dimen name="edittext_height">72dp</dimen>
+    <dimen name="padding_left">16dp</dimen>
+    <dimen name="button_width">372dp</dimen>
+    <dimen name="text_size_title">42sp</dimen>
+    <dimen name="text_size_small">18sp</dimen>
+    <dimen name="textview_width_large">384dp</dimen>
+    <dimen name="textview_height_large">102dp</dimen>
+    <dimen name="btn_ok_text_size">32sp</dimen>
+    <dimen name="btn_ok_width">240dp</dimen>
+    <dimen name="btn_ok_height">60dp</dimen>
+    <dimen name="bottom_line_height">22dp</dimen>
+    <dimen name="wallet_margin_top">134dp</dimen>
+    <dimen name="warning_margin_bottom">14dp</dimen>
+    <dimen name="mnemonic_text_margin">36dp</dimen>
+    <dimen name="gridview_margin">76dp</dimen>
+    <dimen name="gridview_height">188dp</dimen>
+    <dimen name="gridview_space">28dp</dimen>
+    <dimen name="dp0">0dp</dimen>
+    <dimen name="toolbar_margin">-10dp</dimen>
+    <dimen name="tv_margin_top">32dp</dimen>
+    <dimen name="qr_image_size">196dp</dimen>
+    <dimen name="send_et_height">56dp</dimen>
+    <dimen name="login_scrollview_height">352dp</dimen>
+    <dimen name="wallet_scrollview_height">400dp</dimen>
+    <dimen name="app_logo_text_margin">48dp</dimen>
+    <dimen name="field_padding_margin">16dp</dimen>
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/whiteColor"
+                android:id="@+id/container">
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="@string/text_url"
+              android:layout_centerInParent="true"
+              android:layout_above="@+id/tv_url"
+              android:textColor="@color/colorPrimary"
+              android:textSize="@dimen/text_size"
+
+    />
+    <EditText android:layout_width="match_parent"
+              android:background="@drawable/restore_wallet_field_background"
+              android:layout_height="@dimen/edittext_height"
+              android:layout_centerInParent="true"
+              android:layout_marginLeft="@dimen/app_logo_text_margin"
+              android:layout_marginRight="@dimen/app_logo_text_margin"
+              android:id="@+id/tv_url"
+              android:paddingStart="@dimen/padding_left"
+              android:maxLines="1"
+              android:inputType="textUri"
+              tools:ignore="RtlSymmetry"/>
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/tv_url"
+            android:textColor="@color/whiteColor"
+            android:textSize="@dimen/text_size"
+            android:background="@drawable/login_btn_background"
+            android:layout_marginTop="@dimen/tv_margin_top"
+            android:id="@+id/okBTn"/>
+
+
+</RelativeLayout>

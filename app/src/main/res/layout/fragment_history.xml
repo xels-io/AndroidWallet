@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteColor">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/historyRv"
+                android:background="@color/whiteColor"
+                android:visibility="visible">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/noData"
+                  android:text="@string/you_have_no_transection_history"
+                  android:gravity="center"
+                  android:textColor="@color/colorPrimary"
+                  android:textSize="15sp"
+                  android:visibility="gone"/>
+
+
+    </FrameLayout>
+
+
+</android.support.v4.widget.SwipeRefreshLayout>

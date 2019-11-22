@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name">Xels Android wallet</string>
+    <string name="choose_a_wallet">Choose a wallet</string>
+    <string name="decrypt">Decrypt</string>
+    <string name="available_balance">Available Balance</string>
+    <string name="from">From:</string>
+    <string name="amount_available">Amount available</string>
+    <string name="amount">Amount</string>
+    <string name="destination_address">Destination address</string>
+    <string name="transaction_fee">Transaction Fee</string>
+    <string name="please_enter_a_valid_fee">Please enter a valid amount
+        and destination address to calculate the fee.
+    </string>
+    <string name="please_enter_your_wallet_password">Please enter your wallet password.</string>
+    <string name="please_enter_the_destination_address_here">Please enter the destination address here.</string>
+    <string name="_0_00_xels">0.00 Xels</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="latest_transaction">History</string>
+    <string name="show_all_addresses">Show all addresses</string>
+    <string name="ok">OK</string>
+    <string name="restore_a_wallet">Restore wallet</string>
+    <string name="login">Log In</string>
+    <string name="name">Name</string>
+    <string name="restore_wallet">Restore wallet</string>
+    <string name="earliest_possible_creation_date">Earliest Possible Creation Date</string>
+    <string name="secret_words">Secret Words</string>
+    <string name="password">Password</string>
+    <string name="enter_a_password">Enter a password</string>
+    <string name="enter_your_secret_word">Enter your secret word</string>
+    <string name="select_the_date_your_wallet_was_created">Select the date your wallet was created</string>
+    <string name="enter_a_wallet_name">Enter a wallet name</string>
+    <string name="restore">Restore</string>
+    <string name="enter_your_secret_words">Enter your secret words</string>
+    <string name="you_have_no_transection_history">You have no transaction history</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="your_password_will_be_required">Your password will be required to recover \nyour wallet in the future.
+        Keep it safe.
+    </string>
+    <string name="create_new_wallet">Create a new wallet</string>
+    <string name="create_wallet">Create A Wallet</string>
+    <string name="word_number_4">Word number 4</string>
+    <string name="word_number_8">Word number 8</string>
+    <string name="word_number_12">Word number 12</string>
+    <string name="text_word_number">Word number</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_words">Confirm Words</string>
+    <string name="wallet_created">Wallet Created</string>
+    <string name="your_wallet_has_been_created">Your wallet has been created. Keep your secret words and password
+        safe!
+    </string>
+    <string name="please_write_down_your_secret_words_and_password">Please write down your secret words and passphrase.
+        You will need both to recover your wallet in your future.
+    </string>
+    <string name="warning">Warning !</string>
+    <string name="create">Create</string>
+    <string name="mnemonics">Mnemonics</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_you_password">Enter you password</string>
+    <string name="enter_word_4th_from_mnemonics">Enter word 4th from mnemonics</string>
+    <string name="enter_word_8th_from_mnemonics">Enter word 8th from mnemonics</string>
+    <string name="enter_word_12th_from_mnemonics">Enter word 12th from mnemonics</string>
+    <string name="create_a_wallet">Create a wallet</string>
+    <string name="used">Used</string>
+    <string name="unused">Unused</string>
+    <string name="changed">Changed</string>
+    <string name="copy">Copy</string>
+    <string name="qr_code">QR code</string>
+    <string name="share">Share</string>
+    <string name="you_have_no_address_yet">You have no address yet!</string>
+    <string name="passphrase">Passphrase</string>
+    <string name="enter_a_passphrase">Enter a passphrase</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="text_enter_amount">Please Enter a valid amount</string>
+    <string name="text_enter_address">Please Enter a valid address</string>
+    <string name="text_enter_password">Please Enter your password</string>
+
+    <string name="text_show_full_address">Show Full History</string>
+    <string name="text_no_recent_history">No Recent history to show</string>
+    <string name="text_recent_transaction_history">Recent Transaction History</string>
+    <string name="text_url">URL</string>
+    <string name="text_ok">Ok</string>
+    <string name="wallet_name_missing">Wallet name missing</string>
+    <string name="password_name_missing">Password missing</string>
+    <string name="text_setting">Settings</string>
+    <string name="text_dashboard">DashBoard</string>
+    <string name="text_receive">Receive</string>
+    <string name="text_logout">Logout</string>
+    <string name="text_enter_wallet_name">Enter Wallet Name</string>
+    <string name="text_enter_word">Please enter mnemonic</string>
+    <string name="text_enter_date">Please enter possible creation date</string>
+    <string name="text_xels"> XELS</string>
+    <string name="text_tran_details">Transaction details</string>
+    <string name="text_type">Type</string>
+    <string name="text_total_amount">Total Amount</string>
+    <string name="text_amount_sent">Amount Sent</string>
+    <string name="text_fee">Fee</string>
+    <string name="text_date">Date</string>
+    <string name="text_block">Block</string>
+    <string name="text_confirmation">Confirmation</string>
+    <string name="text_transaction_id">Transaction ID</string>
+    <string name="text_enter_passphrase">Enter passphrase</string>
+    <string name="text_password_type_mismatch">Password must be at least eight character and must contain at least one uppercase letter, one lowercase letter, one number and one special character</string>
+    <string name="text_wallet_name_mismatch">Please enter a valid wallet name. [a-Z] and [0-9] are the only characters allowed</string>
+    <string name="text_wallet_name_length_checker">Wallet name length must be between 1 to 24 character</string>
+    <string name="text_password_mismatch">Password mismatch</string>
+    <string name="text_wallet_name_password_same_warning">Wallet name and password can not be the same</string>
+    <string name="text_capital_reward">REWARD</string>
+    <string name="text_unconfirmed">unconfirmed</string>
+    <string name="text_date_format">MMM d, y, h:mm:ss a"</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

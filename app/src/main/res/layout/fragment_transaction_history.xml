@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:shimmer="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipe_layout"
+        tools:context=".view.fragment.TransactionHistoryFragment">
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/field_padding_margin"
+                android:orientation="vertical"
+                shimmer:duration="600"
+                android:layout_marginLeft="@dimen/field_padding_margin"
+                android:layout_marginRight="@dimen/field_padding_margin">
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+                <include layout="@layout/layout_history_shimmer_tem"></include>
+
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rv_tran_history">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/tv_no_history"
+                  android:layout_gravity="center"
+                  android:text="@string/you_have_no_transection_history"
+                  android:gravity="center"
+                  android:textColor="@color/colorPrimary"
+                  android:textSize="15sp"
+                  android:visibility="gone"/>
+
+    </FrameLayout>
+
+
+</android.support.v4.widget.SwipeRefreshLayout>

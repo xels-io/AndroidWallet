@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:shimmer="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:weightSum="3"
+                  android:orientation="horizontal"
+    >
+
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/used"
+                android:id="@+id/usedBtn"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/login_btn_background"
+                android:textColor="@color/whiteColor"
+                android:layout_margin="10dp"/>
+
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/unused"
+                android:id="@+id/unusedBtn"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/login_btn_background"
+                android:textColor="@color/whiteColor"
+                android:layout_margin="10dp"/>
+
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/changed"
+                android:id="@+id/changedBtn"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/login_btn_background"
+                android:textColor="@color/whiteColor"
+                android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+
+    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+              android:id="@+id/noData"
+              android:text="@string/you_have_no_address_yet"
+              android:gravity="center"
+              android:textColor="@color/colorPrimary"
+              android:textSize="15sp"
+              android:visibility="gone"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/field_padding_margin"
+            android:orientation="vertical"
+            shimmer:duration="600"
+            android:layout_marginLeft="@dimen/field_padding_margin"
+            android:layout_marginRight="@dimen/field_padding_margin">
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <include layout="@layout/layout_history_shimmer_tem"/>
+            <include layout="@layout/layout_history_shimmer_tem"/>
+            <include layout="@layout/layout_history_shimmer_tem"/>
+            <include layout="@layout/layout_history_shimmer_tem"/>
+            <include layout="@layout/layout_history_shimmer_tem"/>
+            <include layout="@layout/layout_history_shimmer_tem"/>
+            <include layout="@layout/layout_history_shimmer_tem"/>
+            <include layout="@layout/layout_history_shimmer_tem"/>
+
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/allAddress"
+                                            android:background="@color/whiteColor"
+
+                                            android:visibility="gone">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

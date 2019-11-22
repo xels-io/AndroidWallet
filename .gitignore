@@ -1,0 +1,10 @@
+*.iml
+/.idea/caches/build_file_checksums.ser
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/captures
+.externalNativeBuild
+app/src/androidTest/java/io/xels/xelsandroidapp/ExampleInstrumentedTest.kt
+app/src/test/java/io/xels/xelsandroidapp/ExampleUnitTest.kt

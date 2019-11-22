@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#62B04F</color>
+    <color name="colorPrimaryDark">#62B04F</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="whiteColor">#fff</color>
+    <color name="blackColor">#000000</color>
+    <color name="grayColor">#D6D1D1</color>
+    <color name="darkRed">#A02319</color>
+    <color name="history_background">#D6D1D1</color>
+    <color name="light_yelloe">#FCF6E3</color>
+    <color name="share_trip_btn_bg">#B2000000</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="red">#F70D0D</color>
+</resources>
