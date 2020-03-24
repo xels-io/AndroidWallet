@@ -115,6 +115,7 @@
     <string name="text_capital_reward">REWARD</string>
     <string name="text_unconfirmed">unconfirmed</string>
     <string name="text_date_format">MMM d, y, h:mm:ss a"</string>
+    <string name="stacked">Stacked</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

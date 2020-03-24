@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.widget.Toolbar
+import android.text.Html
 import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
@@ -54,7 +55,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                 fragment = TransactionHistoryFragment()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, fragment as TransactionHistoryFragment, "HistoryFragment")
-                    .addToBackStack("HistoryFragment").commit()
+                    .addToBackStack("TransactionHistoryFragment").commit()
 
                 navigationView!!.menu.getItem(flag).setChecked(true)
             }
@@ -62,7 +63,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                 fragment = ReceiveFragment()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, fragment as ReceiveFragment, "ReceiveFragment")
-                    .addToBackStack("HistoryFragment").commit()
+                    .addToBackStack("ReceiveFragment").commit()
 
                 navigationView!!.menu.getItem(flag).setChecked(true)
             }
@@ -70,7 +71,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                 fragment = SendFragment()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, fragment as SendFragment, "SendFragment")
-                    .addToBackStack("HistoryFragment").commit()
+                    .addToBackStack("SendFragment").commit()
 
                 navigationView!!.menu.getItem(flag).setChecked(true)
             }
@@ -88,7 +89,6 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         val id = p0.itemId
-
         if (id == R.id.latestTransaction) {
 
             if (internetCheck(this@BaseActivity)) {
@@ -96,7 +96,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                 fragment = TransactionHistoryFragment()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, fragment as TransactionHistoryFragment, "HistoryFragment")
-                    .addToBackStack("HistoryFragment").commit()
+                    .addToBackStack("TransactionHistoryFragment").commit()
             }
 
 
@@ -134,6 +134,20 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                     .replace(R.id.frameLayout, fragment as DashBoardFragment, "DashBoardFragment")
                     .addToBackStack("DashBoardFragment").commit()
             }
+        }
+
+
+        else if (id == R.id.stacked) {
+
+            if (internetCheck(this@BaseActivity)) {
+
+                fragment = StackedFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frameLayout, fragment as StackedFragment, "StackedFragment")
+                    .addToBackStack("StackedFragment").commit()
+            }
+
+
         }
 
         drawer!!.closeDrawer(GravityCompat.START)
