@@ -45,7 +45,17 @@ class HistoryAdapter(var itemList: ArrayList<HistoryApiResponseModel.InnerMsg.Hi
                     p0.statusImage.setBackgroundResource(R.drawable.ic_stake_icon_not_confirmed)
                 }
 
-                p0.status.text = "Reward"
+                p0.status.text = "Hybrid Reward"
+            }
+            "mined" -> {
+                p0.fromAddressTxtView.text = itemList.get(p1).toAddress
+                if (itemList.get(p1).confirmedInBlock > 0) {
+                    p0.statusImage.setBackgroundResource(R.drawable.ic_stake_icon)
+                } else {
+                    p0.statusImage.setBackgroundResource(R.drawable.ic_stake_icon_not_confirmed)
+                }
+
+                p0.status.text = "Pow Reward"
             }
             "send" -> {
                 p0.fromAddressTxtView.text = itemList.get(p1).payments.get(0).destinationAddress
