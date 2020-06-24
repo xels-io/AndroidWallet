@@ -9,6 +9,7 @@ import android.widget.TextView
 import io.xels.xelsandroidapp.R
 import io.xels.xelsandroidapp.response_model.HistoryApiResponseModel
 import io.xels.xelsandroidapp.ulits.AppConstance
+import io.xels.xelsandroidapp.ulits.PreferenceManager.getString
 import io.xels.xelsandroidapp.ulits.Utils
 import java.math.BigDecimal
 
@@ -39,7 +40,7 @@ class StackedListAdapter(var body: HistoryApiResponseModel?/*,var context:Fragme
                 p0.fromAddressTxtView.text =
                     body!!.innerMsg.history[0].transactionsHistory.get(p1).toAddress
                 p0.statusImage.setBackgroundResource(R.drawable.stake)
-                p0.status.text = "Reward"
+                p0.status.text = "Hybrid Reward"
 
 
                 amount = BigDecimal.valueOf(

@@ -26,7 +26,7 @@
         <item
                 android:id="@+id/stacked"
                 android:icon="@drawable/coin_unselected_1x"
-                android:title="@string/stacked" />
+                android:title="@string/hybrid_reward" />
         <item
                 android:id="@+id/logout"
                 android:icon="@drawable/ic_logout"

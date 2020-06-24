@@ -16,7 +16,9 @@ import java.math.BigDecimal
 
 class TransactionHistoryAdapter(context: Context) :
     BaseRecyclerAdapter<HistoryApiResponseModel.InnerMsg.History.TransactionsHistory, OnHistoryClickListener
-    <HistoryApiResponseModel.InnerMsg.History.TransactionsHistory>, TransactionHistoryAdapter.HistoryViewHolder>(context) {
+    <HistoryApiResponseModel.InnerMsg.History.TransactionsHistory>, TransactionHistoryAdapter.HistoryViewHolder>(
+        context
+    ) {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): HistoryViewHolder {
         return HistoryViewHolder(inflate(R.layout.history_items, viewGroup))
@@ -24,7 +26,9 @@ class TransactionHistoryAdapter(context: Context) :
 
     class HistoryViewHolder(itemView: View) :
         BaseViewHolder<HistoryApiResponseModel.InnerMsg.History.TransactionsHistory,
-                OnHistoryClickListener<HistoryApiResponseModel.InnerMsg.History.TransactionsHistory>>(itemView) {
+                OnHistoryClickListener<HistoryApiResponseModel.InnerMsg.History.TransactionsHistory>>(
+            itemView
+        ) {
         var dateTxtView: TextView
         var amountTxtView: TextView
         var fromAddressTxtView: TextView
@@ -58,7 +62,17 @@ class TransactionHistoryAdapter(context: Context) :
                         statusImage.setBackgroundResource(R.drawable.ic_stake_icon_not_confirmed)
                     }
 
-                    status.text = "Reward"
+                    status.text = "Hybrid Reward"
+                }
+                "mined" -> {
+                    fromAddressTxtView.text = item.toAddress
+                    if (item.confirmedInBlock > 0) {
+                        statusImage.setBackgroundResource(R.drawable.ic_stake_icon)
+                    } else {
+                        statusImage.setBackgroundResource(R.drawable.ic_stake_icon_not_confirmed)
+                    }
+
+                    status.text = "Pow Reward"
                 }
                 "send" -> {
                     fromAddressTxtView.text = item.payments.get(0).destinationAddress
@@ -82,7 +96,7 @@ class TransactionHistoryAdapter(context: Context) :
             }
 
             layoutContent.setOnClickListener({
-                if(listener!=null){
+                if (listener != null) {
                     listener.onItemClicked(item)
                 }
             })

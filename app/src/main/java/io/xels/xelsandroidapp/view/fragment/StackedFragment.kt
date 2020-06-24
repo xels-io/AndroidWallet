@@ -40,7 +40,7 @@ class StackedFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        toolBarControll?.setTitle(getString(R.string.stacked))
+        toolBarControll?.setTitle(getString(R.string.hybrid_reward))
         historyViewModel = ViewModelProviders.of(this).get(HistoryViewModel::class.java)
 
     }
