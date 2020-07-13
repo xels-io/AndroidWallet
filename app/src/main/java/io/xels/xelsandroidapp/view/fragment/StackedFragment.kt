@@ -12,22 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import io.xels.xelsandroidapp.R
-import io.xels.xelsandroidapp.adapter.HistoryRvAdapter
 import io.xels.xelsandroidapp.adapter.StackedListAdapter
 import io.xels.xelsandroidapp.interfaces.ToolBarControll
-import io.xels.xelsandroidapp.response_model.HistoryApiResponseModel
-import io.xels.xelsandroidapp.retrofit.ApiClient
 import io.xels.xelsandroidapp.retrofit.ApiInterface
-import io.xels.xelsandroidapp.ulits.AppConstance
-import io.xels.xelsandroidapp.ulits.PreferenceManager
-import io.xels.xelsandroidapp.ulits.Utils
 import io.xels.xelsandroidapp.view_model.HistoryViewModel
-import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.android.synthetic.main.fragment_stacked.*
-import kotlinx.android.synthetic.main.fragment_transaction_history.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class StackedFragment : Fragment() {
 
@@ -37,11 +26,22 @@ class StackedFragment : Fragment() {
     lateinit var noData: TextView
     lateinit var stackedAdapet: StackedListAdapter
     private var historyViewModel: HistoryViewModel? = null
+    private var type: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        toolBarControll?.setTitle(getString(R.string.hybrid_reward))
         historyViewModel = ViewModelProviders.of(this).get(HistoryViewModel::class.java)
+
+        type = this.arguments?.getInt("type", 0)!!
+
+        if (type == 0) {
+            toolBarControll?.setTitle(getString(R.string.hybrid_reward))
+
+        } else
+            if (type == 1) {
+                toolBarControll?.setTitle(getString(R.string.pow_reward))
+
+            }
 
     }
 
@@ -64,9 +64,47 @@ class StackedFragment : Fragment() {
                     stacked_rv.visibility = View.VISIBLE
                     noData.visibility = View.GONE
 
-                    stackedAdapet = StackedListAdapter(historyResponse)
 
-                    stacked_rv.setAdapter(stackedAdapet)
+                    if (type == 0) {
+
+                        for (i in historyResponse.innerMsg.history[0].transactionsHistory) {
+
+                            if (i.type.equals("staked"))
+
+                            {
+                                stackedAdapet = StackedListAdapter(historyResponse, type)
+
+                                stacked_rv.setAdapter(stackedAdapet)
+                            }
+
+                            else {
+                                noData.visibility = View.VISIBLE
+
+                            }
+                        }
+
+
+
+
+                    } else if (type == 1) {
+                        for (i in historyResponse.innerMsg.history[0].transactionsHistory){
+
+
+                            if (i.type.equals("Mined")
+                            ) {
+                                stackedAdapet = StackedListAdapter(historyResponse, type)
+
+                                stacked_rv.setAdapter(stackedAdapet)
+                            } else {
+                                noData.visibility = View.VISIBLE
+
+                            }
+
+                        }
+
+                    }
+
+
                 } else {
                     noData.visibility = View.GONE
                 }
@@ -101,3 +139,4 @@ class StackedFragment : Fragment() {
     }
 
 }
+

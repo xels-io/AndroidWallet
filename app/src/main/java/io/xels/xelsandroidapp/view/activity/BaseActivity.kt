@@ -39,11 +39,11 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
     NavigationView.OnNavigationItemSelectedListener {
     override fun enableSelectedDrawer() {
         val fragment1 = supportFragmentManager.findFragmentById(R.id.frameLayout)
-        if(fragment1 is DashBoardFragment){
+        if (fragment1 is DashBoardFragment) {
             navigationView!!.menu.getItem(0).setChecked(true)
-        }else if(fragment1 is HistoryFragment){
+        } else if (fragment1 is HistoryFragment) {
             navigationView!!.menu.getItem(1).setChecked(true)
-        }else if(fragment1 is ReceiveFragment){
+        } else if (fragment1 is ReceiveFragment) {
             navigationView!!.menu.getItem(2).setChecked(true)
         }
 
@@ -54,7 +54,11 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
             1 -> {
                 fragment = TransactionHistoryFragment()
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, fragment as TransactionHistoryFragment, "HistoryFragment")
+                    .replace(
+                        R.id.frameLayout,
+                        fragment as TransactionHistoryFragment,
+                        "HistoryFragment"
+                    )
                     .addToBackStack("TransactionHistoryFragment").commit()
 
                 navigationView!!.menu.getItem(flag).setChecked(true)
@@ -95,7 +99,11 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
 
                 fragment = TransactionHistoryFragment()
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, fragment as TransactionHistoryFragment, "HistoryFragment")
+                    .replace(
+                        R.id.frameLayout,
+                        fragment as TransactionHistoryFragment,
+                        "HistoryFragment"
+                    )
                     .addToBackStack("TransactionHistoryFragment").commit()
             }
 
@@ -134,20 +142,35 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                     .replace(R.id.frameLayout, fragment as DashBoardFragment, "DashBoardFragment")
                     .addToBackStack("DashBoardFragment").commit()
             }
-        }
-
-
-        else if (id == R.id.stacked) {
+        } else if (id == R.id.stacked) {
 
             if (internetCheck(this@BaseActivity)) {
 
                 fragment = StackedFragment()
+
+                var b = Bundle();
+                b.putInt("type", 0)
+                (fragment as StackedFragment).arguments = b
+
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, fragment as StackedFragment, "StackedFragment")
                     .addToBackStack("StackedFragment").commit()
             }
 
 
+        } else if (id == R.id.pow_reward) {
+            if (internetCheck(this@BaseActivity)) {
+
+                fragment = StackedFragment()
+
+                var b = Bundle()
+                b.putInt("type", 1)
+
+                (fragment as StackedFragment).arguments = b
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frameLayout, fragment as StackedFragment, "StackedFragment")
+                    .addToBackStack("StackedFragment").commit()
+            }
         }
 
         drawer!!.closeDrawer(GravityCompat.START)
@@ -155,7 +178,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun logout(logoutObject: LogoutObject){
+    fun logout(logoutObject: LogoutObject) {
         Utils.logout(this@BaseActivity)
         finish()
     }
@@ -185,7 +208,8 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
     }
 
 
-    var typeNetwork: IntArray = intArrayOf(ConnectivityManager.TYPE_MOBILE, ConnectivityManager.TYPE_WIFI)
+    var typeNetwork: IntArray =
+        intArrayOf(ConnectivityManager.TYPE_MOBILE, ConnectivityManager.TYPE_WIFI)
     var toolBar: Toolbar? = null
     var titleTxt: TextView? = null
     var drawerBtn: Button? = null
@@ -258,15 +282,22 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                 val fragment1 = supportFragmentManager.findFragmentById(R.id.frameLayout)
 
                 if (fragment1 is HistoryFragment || fragment1 is ReceiveFragment || fragment1 is SendFragment || fragment1 is ShowAllAddressFragment) {
-                    supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                    supportFragmentManager.popBackStack(
+                        null,
+                        FragmentManager.POP_BACK_STACK_INCLUSIVE
+                    )
                     fragment = DashBoardFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frameLayout, fragment as DashBoardFragment, "DashBoardFragment")
+                        .replace(
+                            R.id.frameLayout,
+                            fragment as DashBoardFragment,
+                            "DashBoardFragment"
+                        )
                         .addToBackStack("DashBoardFragment").commit()
                     navigationView!!.menu.getItem(0).setChecked(true)
                 } else if (fragment1 is DashBoardFragment) {
                     finish()
-                }else{
+                } else {
                     supportFragmentManager.popBackStack()
                 }
 

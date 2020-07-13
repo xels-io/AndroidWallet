@@ -28,6 +28,10 @@
                 android:icon="@drawable/coin_unselected_1x"
                 android:title="@string/hybrid_reward" />
         <item
+                android:id="@+id/pow_reward"
+                android:icon="@drawable/coin_unselected_1x"
+                android:title="@string/pow_reward" />
+        <item
                 android:id="@+id/logout"
                 android:icon="@drawable/ic_logout"
                 android:iconTint="@color/whiteColor"

@@ -1,44 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/whiteColor"
-        android:id="@+id/container">
+        android:background="@color/whiteColor">
 
     <LinearLayout
+            android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".view.activity.LoginActivity"
-            android:orientation="vertical"
             android:background="@color/whiteColor"
-            android:id="@+id/layout">
+            android:orientation="vertical"
+            tools:context=".view.activity.LoginActivity">
 
         <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/toolbar_margin"
-                android:background="@color/colorPrimary"
-                android:id="@+id/toolbar">
-            <RelativeLayout android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                 <TextView
                         android:id="@+id/text_screen_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/btn_ok_text_size"
-                        android:text="@string/login"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/whiteColor"/>
+                        android:text="@string/login"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="@dimen/btn_ok_text_size" />
 
-                <Button android:layout_width="@dimen/app_logo_text_margin"
+                <Button
+                        android:id="@+id/settingBtn"
+                        android:layout_width="@dimen/app_logo_text_margin"
                         android:layout_height="@dimen/app_logo_text_margin"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="@dimen/tv_margin_top"
-                        android:background="@drawable/ic_settings_white_24dp"
-                        android:id="@+id/settingBtn"/>
+                        android:background="@drawable/ic_settings_white_24dp" />
 
 
             </RelativeLayout>
@@ -48,18 +51,20 @@
                 android:id="@+id/walletEditTxt"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edittext_height"
-                android:hint="@string/choose_a_wallet"
-                android:textColor="@color/blackColor"
                 android:layout_marginLeft="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/app_logo_text_margin"
                 android:layout_marginRight="@dimen/layout_margin_left"
                 android:layout_marginBottom="@dimen/layout_margin_left"
-                android:layout_marginTop="@dimen/app_logo_text_margin"
                 android:background="@drawable/login_text_background"
-                android:textSize="@dimen/text_size"
-                android:paddingStart="@dimen/field_padding_margin"
+                android:hint="@string/choose_a_wallet"
                 android:inputType="text"
                 android:maxLines="1"
-                tools:ignore="RtlSymmetry"/>
+                android:paddingStart="@dimen/field_padding_margin"
+                android:text="AWS"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/text_size"
+                tools:ignore="RtlSymmetry" />
+
         <EditText
                 android:id="@+id/passwordEditTxt"
                 android:layout_width="match_parent"
@@ -67,38 +72,40 @@
                 android:layout_marginLeft="@dimen/layout_margin_left"
                 android:layout_marginRight="@dimen/layout_margin_left"
                 android:layout_marginBottom="@dimen/layout_margin_left"
-                android:hint="@string/enter_you_password"
-                android:textColor="@color/blackColor"
-                android:paddingStart="10dp"
                 android:background="@drawable/login_text_background"
+                android:hint="@string/enter_you_password"
                 android:inputType="textPassword"
-                android:textSize="@dimen/text_size"
                 android:maxLines="1"
+                android:paddingStart="10dp"
+                android:text="Asdf1234!"
+                android:textColor="@color/blackColor"
+
+                android:textSize="@dimen/text_size"
+                tools:ignore="RtlSymmetry" />
 
 
-                tools:ignore="RtlSymmetry"/>
-
-
-        <Button android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+        <Button
                 android:id="@+id/decryptBtn"
-                android:text="@string/decrypt"
-                android:textSize="@dimen/toolbar_headline_text_size"
-                android:textColor="@color/whiteColor"
-                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/layout_margin_left"
                 android:layout_marginRight="@dimen/layout_margin_left"
-                android:padding="@dimen/field_padding_margin"
                 android:background="@drawable/login_btn_background"
+                android:padding="@dimen/field_padding_margin"
+                android:text="@string/decrypt"
+                android:textAllCaps="false"
+                android:textColor="@color/whiteColor"
+                android:textSize="@dimen/toolbar_headline_text_size"
 
-        />
+                />
     </LinearLayout>
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -106,34 +113,34 @@
                 android:id="@+id/restoreWalletBtn"
                 android:layout_width="@dimen/dp0"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/layout_margin_small"
                 android:layout_marginTop="@dimen/layout_margin_small"
                 android:layout_marginBottom="@dimen/layout_margin_small"
-                android:text="@string/restore"
-                android:textSize="@dimen/toolbar_headline_text_size"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="false"
-                android:layout_gravity="center"
-                android:background="@drawable/background_rectangle_white"
                 android:layout_weight="1"
+                android:background="@drawable/background_rectangle_white"
+                android:text="@string/restore"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/toolbar_headline_text_size"
 
-        />
+                />
+
         <Button
+                android:id="@+id/btn_create_wallet"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/layout_margin_small"
-                android:layout_marginRight="@dimen/layout_margin_small"
-                android:layout_marginTop="@dimen/layout_margin_small"
-                android:layout_marginBottom="@dimen/layout_margin_small"
-                android:text="@string/create"
-                android:textSize="@dimen/toolbar_headline_text_size"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="false"
                 android:layout_gravity="center"
-                android:background="@drawable/background_rectangle_white"
+                android:layout_marginLeft="@dimen/layout_margin_small"
+                android:layout_marginTop="@dimen/layout_margin_small"
+                android:layout_marginRight="@dimen/layout_margin_small"
+                android:layout_marginBottom="@dimen/layout_margin_small"
                 android:layout_weight="1"
-                android:id="@+id/btn_create_wallet"
-        />
+                android:background="@drawable/background_rectangle_white"
+                android:text="@string/create"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/toolbar_headline_text_size" />
 
     </LinearLayout>
 
