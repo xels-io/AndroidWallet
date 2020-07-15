@@ -64,8 +64,8 @@ class StackedListAdapter(
                 }
             }
         } else if (type == 1) {
-            when (body!!.innerMsg.history[0].transactionsHistory.get(p1).type) {
-                "Mined" -> {
+            when (body!!.innerMsg.history[0].transactionsHistory.get(p1).type.toLowerCase()) {
+                "mined" -> {
                     p0.fromAddressTxtView.text =
                         body!!.innerMsg.history[0].transactionsHistory.get(p1).toAddress
                     p0.statusImage.setBackgroundResource(R.drawable.stake)

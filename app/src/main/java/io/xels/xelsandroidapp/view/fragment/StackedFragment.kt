@@ -69,33 +69,33 @@ class StackedFragment : Fragment() {
 
                         for (i in historyResponse.innerMsg.history[0].transactionsHistory) {
 
-                            if (i.type.equals("staked"))
+                            if (i.type.equals("staked")) {
+                                noData.visibility = View.GONE
 
-                            {
                                 stackedAdapet = StackedListAdapter(historyResponse, type)
 
                                 stacked_rv.setAdapter(stackedAdapet)
-                            }
-
-                            else {
+                            } else {
+                                noData.text="You have no hybrid reward"
                                 noData.visibility = View.VISIBLE
 
                             }
                         }
 
 
-
-
                     } else if (type == 1) {
-                        for (i in historyResponse.innerMsg.history[0].transactionsHistory){
+                        for (i in historyResponse.innerMsg.history[0].transactionsHistory) {
 
 
-                            if (i.type.equals("Mined")
+                            if (i.type.toLowerCase().equals("mined")
                             ) {
+                                noData.visibility = View.GONE
+
                                 stackedAdapet = StackedListAdapter(historyResponse, type)
 
                                 stacked_rv.setAdapter(stackedAdapet)
                             } else {
+                                noData.text="You have no pow reward"
                                 noData.visibility = View.VISIBLE
 
                             }
