@@ -1,7 +1,7 @@
 package io.xels.xelsandroidapp.view.activity
 
 import android.os.Bundle
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.util.Log
 import com.google.zxing.Result
 import io.xels.xelsandroidapp.request_model.ScannerResultModel
@@ -10,7 +10,7 @@ import org.greenrobot.eventbus.EventBus
 
 
 
-class ScannerAcitivity : FragmentActivity(), ZXingScannerView.ResultHandler {
+class ScannerAcitivity : androidx.fragment.app.FragmentActivity(), ZXingScannerView.ResultHandler {
 
 
     var TAG: String = "ScannerAcitivity"

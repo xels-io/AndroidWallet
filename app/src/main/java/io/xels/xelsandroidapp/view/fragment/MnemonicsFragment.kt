@@ -2,7 +2,7 @@ package io.xels.xelsandroidapp.view.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +24,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MnemonicsFragment : Fragment(), View.OnClickListener {
+class MnemonicsFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_create_wallet -> {
@@ -79,7 +79,7 @@ class MnemonicsFragment : Fragment(), View.OnClickListener {
     var apiInterface: ApiInterface? = null
     var TAG: String = "MnemonicsFragment"
     var adapter: WordGridViewAdapter? = null
-    var fragment: Fragment? = null
+    var fragment: androidx.fragment.app.Fragment? = null
     lateinit var b: Bundle
 
     override fun onCreate(savedInstanceState: Bundle?) {

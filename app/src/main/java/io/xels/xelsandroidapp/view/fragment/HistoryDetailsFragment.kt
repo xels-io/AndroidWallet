@@ -2,9 +2,9 @@ package io.xels.xelsandroidapp.view.fragment
 
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class HistoryDetailsFragment : Fragment(), View.OnClickListener {
+class HistoryDetailsFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_ok -> {
@@ -75,8 +75,15 @@ class HistoryDetailsFragment : Fragment(), View.OnClickListener {
         } else {
             tv_total_amount.setTextColor(resources.getColor(R.color.red))
             tv_type.text = data?.type.toString().toUpperCase()
-            val amountSent = BigDecimal.valueOf(data?.payments?.get(0)?.amount?.div(AppConstance.shatoshi)!!)
-            tv_amount_sent.text = amountSent.toString() + " " + resources.getString(R.string.text_xels)
+
+            if(data?.payments?.size!! >0){
+                val amountSent = BigDecimal.valueOf(data?.payments?.get(0)?.amount?.div(AppConstance.shatoshi)!!)
+                tv_amount_sent.text = amountSent.toString() + " " + resources.getString(R.string.text_xels)
+
+            }else{
+                tv_amount_sent.text = "n/a"
+
+            }
             tv_fee.text = data!!.fee.toString()
             if (data?.confirmedInBlock == 0) {
                 layout_block.visibility = View.GONE
@@ -92,7 +99,7 @@ class HistoryDetailsFragment : Fragment(), View.OnClickListener {
 
     private fun getConfirmation() {
         historyDetailsViewModel?.getConfirmedResponse()
-            ?.observe(this, android.arch.lifecycle.Observer { transactionConfirm ->
+            ?.observe(this, androidx.lifecycle.Observer { transactionConfirm ->
                 if (transactionConfirm != null) {
                     if (data?.confirmedInBlock == 0) {
                         tv_confirmation.background = resources.getDrawable(R.drawable.bg_unconfirmed_tv, null)

@@ -2,7 +2,7 @@ package io.xels.xelsandroidapp.view.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,7 +33,7 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 
-class ReceiveFragment : Fragment(), View.OnClickListener {
+class ReceiveFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.copyToClipBoardBtn -> Utils.copyToClipBoard(activity, addressTxtView.text.toString(), "Address")
@@ -56,7 +56,7 @@ class ReceiveFragment : Fragment(), View.OnClickListener {
     var apiInterface: ApiInterface? = null
     var qrEcode: QRGEncoder? = null
     var bitmap: Bitmap? = null
-    var fragment: Fragment? = null
+    var fragment: androidx.fragment.app.Fragment? = null
 
 
     var toolBarControll: ToolBarControll? = null

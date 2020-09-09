@@ -81,7 +81,7 @@ object PreferenceManager {
 
     fun getString(key: String): String {
         val preferences = m_context!!.getSharedPreferences(AppConstance.SHARED_PREFERENCE, Context.MODE_PRIVATE)
-        return preferences.getString(key, "")
+        return preferences.getString(key, "")!!
     }
 
     @JvmOverloads

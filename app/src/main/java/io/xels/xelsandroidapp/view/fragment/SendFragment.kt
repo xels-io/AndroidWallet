@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -42,7 +42,7 @@ import org.json.JSONObject
 import java.math.BigDecimal
 
 
-class SendFragment : Fragment(), View.OnClickListener {
+class SendFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
 
 
     var TAG: String = "SendFragment"
@@ -52,7 +52,7 @@ class SendFragment : Fragment(), View.OnClickListener {
     var dividedValue: Double? = 0.0
     var toolBarControll: ToolBarControll? = null
     var totalAmount: BigDecimal? = null
-    var fragment: Fragment? = null
+    var fragment: androidx.fragment.app.Fragment? = null
 
     override fun onClick(v: View?) {
         when (v?.id) {

@@ -1,6 +1,6 @@
 package io.xels.xelsandroidapp.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import io.xels.xelsandroidapp.ulits.Utils
 import java.math.BigDecimal
 
 class HistoryAdapter(var itemList: ArrayList<HistoryApiResponseModel.InnerMsg.History.TransactionsHistory>) :
-    RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
     var amount: BigDecimal? = null
 
@@ -79,7 +79,7 @@ class HistoryAdapter(var itemList: ArrayList<HistoryApiResponseModel.InnerMsg.Hi
         }
     }
 
-    class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class HistoryViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         val dateTxtView: TextView = itemView.findViewById(R.id.dateTxtView)
         val amountTxtView: TextView = itemView.findViewById(R.id.amountTxtView)
         val fromAddressTxtView: TextView = itemView.findViewById(R.id.fromAddressTxtView)

@@ -1,13 +1,13 @@
 package io.xels.xelsandroidapp.interfaces
 
 import android.content.Context
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 
 interface ToolBarControll {
 
     fun setTitle(title: String)
     fun showDialog(showDialog: Boolean)
-    fun internetCheck( context: FragmentActivity?): Boolean {
+    fun internetCheck( context: androidx.fragment.app.FragmentActivity?): Boolean {
 
         var isActive: Boolean = true
 

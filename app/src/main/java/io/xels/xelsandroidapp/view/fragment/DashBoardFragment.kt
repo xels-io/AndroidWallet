@@ -3,9 +3,9 @@ package io.xels.xelsandroidapp.view.fragment
 import android.content.Context
 import android.icu.util.TimeUnit
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +32,7 @@ import java.text.DecimalFormat
 import javax.xml.datatype.DatatypeConstants.SECONDS
 
 
-class DashBoardFragment : Fragment() {
+class DashBoardFragment : androidx.fragment.app.Fragment() {
 
     var amountConfirmed: BigDecimal? = null
     var unAmountConfirmed: BigDecimal? = null
@@ -120,9 +120,14 @@ class DashBoardFragment : Fragment() {
                         }
 
                         mAdapter = HistoryAdapter(transcationList)
-                        val mLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+                        val mLayoutManager =
+                            androidx.recyclerview.widget.LinearLayoutManager(
+                                activity,
+                                androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+                                false
+                            )
                         rv_history.setLayoutManager(mLayoutManager)
-                        rv_history.setItemAnimator(DefaultItemAnimator())
+                        rv_history.setItemAnimator(androidx.recyclerview.widget.DefaultItemAnimator())
                         rv_history.setAdapter(mAdapter)
                         rv_history.setHasFixedSize(true)
                         shimmer_view_container.visibility = View.GONE

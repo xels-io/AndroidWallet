@@ -1,12 +1,12 @@
 package io.xels.xelsandroidapp.view.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +20,7 @@ import io.xels.xelsandroidapp.view_model.HistoryViewModel
 import kotlinx.android.synthetic.main.fragment_transaction_history.*
 
 
-class TransactionHistoryFragment : Fragment(),
+class TransactionHistoryFragment : androidx.fragment.app.Fragment(),
     OnHistoryClickListener<HistoryApiResponseModel.InnerMsg.History.TransactionsHistory> {
     override fun onItemClicked(item: HistoryApiResponseModel.InnerMsg.History.TransactionsHistory) {
         val fragment = HistoryDetailsFragment()
@@ -50,9 +50,13 @@ class TransactionHistoryFragment : Fragment(),
         toolBarControll?.showShareBtn(false)
         toolBarControll?.setTitle("History")
         historyViewModel = ViewModelProviders.of(this).get(HistoryViewModel::class.java)
-        val mLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        val mLayoutManager = androidx.recyclerview.widget.LinearLayoutManager(
+            activity,
+            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            false
+        )
         rv_tran_history.layoutManager = mLayoutManager
-        rv_tran_history.setItemAnimator(DefaultItemAnimator())
+        rv_tran_history.setItemAnimator(androidx.recyclerview.widget.DefaultItemAnimator())
         loadHistory()
 
         swipe_layout.setOnRefreshListener({

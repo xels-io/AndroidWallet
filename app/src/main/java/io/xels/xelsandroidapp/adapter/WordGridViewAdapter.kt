@@ -1,13 +1,13 @@
 package io.xels.xelsandroidapp.adapter
 
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
 
-class WordGridViewAdapter(var word: List<String>?, var context: FragmentActivity?) : BaseAdapter() {
+class WordGridViewAdapter(var word: List<String>?, var context: androidx.fragment.app.FragmentActivity?) : BaseAdapter() {
 
     var item: Int = 0;
 

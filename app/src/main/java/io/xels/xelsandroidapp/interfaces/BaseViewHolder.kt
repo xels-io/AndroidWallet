@@ -1,9 +1,9 @@
 package io.xels.xelsandroidapp.interfaces
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
-abstract class BaseViewHolder <T,L : BaseRecyclerListener>(itemView: View) : RecyclerView.ViewHolder(itemView) {
+abstract class BaseViewHolder <T,L : BaseRecyclerListener>(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     abstract fun onBind(item: T, listener: L?)
 }

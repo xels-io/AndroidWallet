@@ -2,10 +2,10 @@ package io.xels.xelsandroidapp.view.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +24,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HistoryFragment : Fragment() {
+class HistoryFragment : androidx.fragment.app.Fragment() {
 
     var historyAdapter: HistoryRvAdapter? = null
     val historyList: HistoryRvAdapter? = null
@@ -95,9 +95,14 @@ class HistoryFragment : Fragment() {
                         noData.visibility = View.GONE
                         //historyAdapter = HistoryRvAdapter(response.body())
                         mAdapter = HistoryAdapter(transcationList)
-                        val mLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+                        val mLayoutManager =
+                            androidx.recyclerview.widget.LinearLayoutManager(
+                                activity,
+                                androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+                                false
+                            )
                         historyRv.setLayoutManager(mLayoutManager)
-                        historyRv.setItemAnimator(DefaultItemAnimator())
+                        historyRv.setItemAnimator(androidx.recyclerview.widget.DefaultItemAnimator())
                         historyRv.setAdapter(mAdapter)
                         historyRv.setHasFixedSize(true)
                     } else {

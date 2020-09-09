@@ -1,10 +1,10 @@
 package io.xels.xelsandroidapp.view.activity
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.support.v4.app.FragmentActivity
-import android.support.v7.widget.Toolbar
+import androidx.fragment.app.FragmentActivity
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.*
 import com.kaopiz.kprogresshud.KProgressHUD
@@ -20,7 +20,7 @@ import retrofit2.Call
 import retrofit2.Response
 import java.util.*
 
-class RestoreWalletActivity : FragmentActivity(), View.OnClickListener {
+class RestoreWalletActivity : androidx.fragment.app.FragmentActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
 
         when (v?.id) {
@@ -129,7 +129,7 @@ class RestoreWalletActivity : FragmentActivity(), View.OnClickListener {
             mPassphraseTxtView?.text.toString(),
             password?.text.toString()
         )
-            ?.observe(this, android.arch.lifecycle.Observer { restoreWalletResponse ->
+            ?.observe(this, androidx.lifecycle.Observer { restoreWalletResponse ->
                 if (restoreWalletResponse != null) {
                     progress?.dismiss()
                     finish()

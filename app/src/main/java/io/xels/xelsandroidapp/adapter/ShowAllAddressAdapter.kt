@@ -1,6 +1,6 @@
 package io.xels.xelsandroidapp.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,7 @@ import org.greenrobot.eventbus.EventBus
 import java.math.BigDecimal
 
 class ShowAllAddressAdapter (var body: ArrayList<String>?) :
-    RecyclerView.Adapter<ShowAllAddressAdapter.ViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<ShowAllAddressAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
 
@@ -43,7 +43,7 @@ class ShowAllAddressAdapter (var body: ArrayList<String>?) :
 
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         val mAddressTxtView: TextView = itemView.findViewById(R.id.addressTxtView)
 

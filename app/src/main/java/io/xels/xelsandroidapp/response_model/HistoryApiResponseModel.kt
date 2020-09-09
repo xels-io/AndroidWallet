@@ -48,11 +48,11 @@ import com.google.gson.annotations.SerializedName
                     parcel.readLong(),
                     parcel.readInt(),
                     parcel.readInt(),
-                    parcel.readString(),
-                    parcel.createTypedArrayList(Payment),
-                    parcel.readString(),
-                    parcel.readString(),
-                    parcel.readString()
+                    parcel.readString()!!,
+                    parcel.createTypedArrayList(Payment)!!,
+                    parcel.readString()!!,
+                    parcel.readString()!!,
+                    parcel.readString()!!
                 ) {
                 }
 
@@ -64,7 +64,7 @@ import com.google.gson.annotations.SerializedName
                 ) : Parcelable {
                     constructor(parcel: Parcel) : this(
                         parcel.readLong(),
-                        parcel.readString()
+                        parcel.readString()!!
                     ) {
                     }
 

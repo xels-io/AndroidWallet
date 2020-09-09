@@ -1,12 +1,12 @@
 package io.xels.xelsandroidapp.view.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +18,7 @@ import io.xels.xelsandroidapp.retrofit.ApiInterface
 import io.xels.xelsandroidapp.view_model.HistoryViewModel
 import kotlinx.android.synthetic.main.fragment_stacked.*
 
-class StackedFragment : Fragment() {
+class StackedFragment : androidx.fragment.app.Fragment() {
 
 
     private var toolBarControll: ToolBarControll? = null
@@ -27,7 +27,7 @@ class StackedFragment : Fragment() {
     lateinit var stackedAdapet: StackedListAdapter
     private var historyViewModel: HistoryViewModel? = null
     private var type: Int = 0;
-
+    private var size=0;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         historyViewModel = ViewModelProviders.of(this).get(HistoryViewModel::class.java)
@@ -67,19 +67,21 @@ class StackedFragment : Fragment() {
 
                     if (type == 0) {
 
-                        for (i in historyResponse.innerMsg.history[0].transactionsHistory) {
 
-                            if (i.type.equals("staked")) {
-                                noData.visibility = View.GONE
+                        if (historyResponse.innerMsg.history[0].transactionsHistory.size > 0) {
+                            for (i in historyResponse.innerMsg.history[0].transactionsHistory) {
 
-                                stackedAdapet = StackedListAdapter(historyResponse, type)
+                                if (i.type.equals("staked")) {
+                                    noData.visibility = View.GONE
 
-                                stacked_rv.setAdapter(stackedAdapet)
-                            } else {
-                                noData.text="You have no hybrid reward"
-                                noData.visibility = View.VISIBLE
-
+                                    stackedAdapet = StackedListAdapter(historyResponse, type)
+                                    stacked_rv.setAdapter(stackedAdapet)
+                                }
                             }
+                        } else {
+                            noData.text = "You have no hybrid reward"
+                            noData.visibility = View.VISIBLE
+
                         }
 
 
@@ -95,7 +97,7 @@ class StackedFragment : Fragment() {
 
                                 stacked_rv.setAdapter(stackedAdapet)
                             } else {
-                                noData.text="You have no pow reward"
+                                noData.text = "You have no pow reward"
                                 noData.visibility = View.VISIBLE
 
                             }
@@ -123,9 +125,13 @@ class StackedFragment : Fragment() {
     private fun init(view: View) {
         noData = view.findViewById(R.id.noData)
         val mLayoutManager =
-            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+            androidx.recyclerview.widget.LinearLayoutManager(
+                activity,
+                androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+                false
+            )
         stacked_rv.setLayoutManager(mLayoutManager)
-        stacked_rv.setItemAnimator(DefaultItemAnimator())
+        stacked_rv.setItemAnimator(androidx.recyclerview.widget.DefaultItemAnimator())
         stacked_rv.setHasFixedSize(true)
 
     }

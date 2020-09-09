@@ -3,13 +3,13 @@ package io.xels.xelsandroidapp.view.activity
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v4.app.FragmentManager
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.widget.Toolbar
+import com.google.android.material.navigation.NavigationView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.widget.Toolbar
 import android.text.Html
 import android.util.Log
 import android.view.Gravity
@@ -34,7 +34,8 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
+class BaseActivity : androidx.fragment.app.FragmentActivity(), ToolBarControll, View.OnClickListener,
+
 
     NavigationView.OnNavigationItemSelectedListener {
     override fun enableSelectedDrawer() {
@@ -213,7 +214,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
     var toolBar: Toolbar? = null
     var titleTxt: TextView? = null
     var drawerBtn: Button? = null
-    var drawer: DrawerLayout? = null
+    var drawer: androidx.drawerlayout.widget.DrawerLayout? = null
     var bundle: Bundle? = null
     var navigationView: NavigationView? = null
     private var progress: KProgressHUD? = null
@@ -222,7 +223,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
     }
 
 
-    override fun internetCheck(context: FragmentActivity?): Boolean {
+    override fun internetCheck(context: androidx.fragment.app.FragmentActivity?): Boolean {
 
         var isActive = isNetworkAvailable(this@BaseActivity, typeNetwork)
         if (!isActive) {
@@ -232,7 +233,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
     }
 
 
-    var fragment: Fragment? = null
+    var fragment: androidx.fragment.app.Fragment? = null
     var shareBtn: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -256,7 +257,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
         drawerBtn = toolBar?.findViewById(R.id.drawerBtn)
         shareBtn = toolBar?.findViewById(R.id.shareBtn)
         shareBtn?.setOnClickListener(this)
-        drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+        drawer = findViewById<View>(R.id.drawer_layout) as androidx.drawerlayout.widget.DrawerLayout
         drawerBtn?.setOnClickListener(this)
         titleTxt?.text = "Dashboard"
 
@@ -284,7 +285,7 @@ class BaseActivity : FragmentActivity(), ToolBarControll, View.OnClickListener,
                 if (fragment1 is HistoryFragment || fragment1 is ReceiveFragment || fragment1 is SendFragment || fragment1 is ShowAllAddressFragment) {
                     supportFragmentManager.popBackStack(
                         null,
-                        FragmentManager.POP_BACK_STACK_INCLUSIVE
+                        androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
                     )
                     fragment = DashBoardFragment()
                     supportFragmentManager.beginTransaction()

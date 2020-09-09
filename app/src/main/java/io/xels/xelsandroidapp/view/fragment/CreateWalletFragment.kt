@@ -2,7 +2,7 @@ package io.xels.xelsandroidapp.view.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,7 @@ import io.xels.xelsandroidapp.interfaces.ToolBarControll
 import io.xels.xelsandroidapp.ulits.Utils
 
 
-class CreateWalletFragment : Fragment(), View.OnClickListener {
+class CreateWalletFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_create_wallet -> {
@@ -64,7 +64,7 @@ class CreateWalletFragment : Fragment(), View.OnClickListener {
     lateinit var bundle: Bundle
     var toolBarControll: ToolBarControll? = null
 
-    var fragment: Fragment? = null
+    var fragment: androidx.fragment.app.Fragment? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -2,8 +2,8 @@ package io.xels.xelsandroidapp.view.activity
 
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import android.util.Log
 import android.widget.Toast
 import com.kaopiz.kprogresshud.KProgressHUD
@@ -13,7 +13,7 @@ import io.xels.xelsandroidapp.view.fragment.CreateWalletFragment
 import io.xels.xelsandroidapp.interfaces.ToolBarControll
 import io.xels.xelsandroidapp.ulits.Utils
 
-class CreateWalletActivity : FragmentActivity(), ToolBarControll {
+class CreateWalletActivity : androidx.fragment.app.FragmentActivity(), ToolBarControll {
     override fun enableSelectedDrawer() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -30,7 +30,7 @@ class CreateWalletActivity : FragmentActivity(), ToolBarControll {
     }
 
 
-    var fragment: Fragment? = null
+    var fragment: androidx.fragment.app.Fragment? = null
     private var progress: KProgressHUD? = null
     var typeNetwork: IntArray = intArrayOf(ConnectivityManager.TYPE_MOBILE, ConnectivityManager.TYPE_WIFI)
 
@@ -64,7 +64,7 @@ class CreateWalletActivity : FragmentActivity(), ToolBarControll {
         }
     }
 
-    override fun internetCheck(context: FragmentActivity?): Boolean {
+    override fun internetCheck(context: androidx.fragment.app.FragmentActivity?): Boolean {
         var isActive = Utils.isNetworkAvailable(this@CreateWalletActivity, typeNetwork)
 
 

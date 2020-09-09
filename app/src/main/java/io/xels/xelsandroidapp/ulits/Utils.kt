@@ -7,7 +7,7 @@ import io.xels.xelsandroidapp.view.activity.LoginActivity
 import java.util.*
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.widget.Toast
 import com.kaopiz.kprogresshud.KProgressHUD
 import android.net.NetworkInfo
@@ -48,14 +48,14 @@ object Utils {
     }
 
 
-    fun copyToClipBoard(context: FragmentActivity?, msg: String?, label: String) {
+    fun copyToClipBoard(context: androidx.fragment.app.FragmentActivity?, msg: String?, label: String) {
         val clipboard = context?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager?
         val clip = ClipData.newPlainText(label, msg)
         clipboard!!.setPrimaryClip(clip)
         Toast.makeText(context, "Copied to clipboard", Toast.LENGTH_SHORT).show()
     }
 
-    fun showError(context: FragmentActivity?) {
+    fun showError(context: androidx.fragment.app.FragmentActivity?) {
         Toast.makeText(context, "Something went wrong, Please try later", Toast.LENGTH_LONG).show()
     }
 
@@ -72,7 +72,7 @@ object Utils {
     }
 
 
-    fun showDialog(context: FragmentActivity) {
+    fun showDialog(context: androidx.fragment.app.FragmentActivity) {
         KProgressHUD.create(context)
             .setStyle(KProgressHUD.Style.PIE_DETERMINATE)
             .setCancellable(true)
@@ -84,7 +84,7 @@ object Utils {
 
     fun handleErrorResponse(
         response: Response<*>,
-        fragmentActivity: FragmentActivity?,
+        fragmentActivity: androidx.fragment.app.FragmentActivity?,
         code: Int
     ) {
 
@@ -125,7 +125,7 @@ object Utils {
     }
 
 
-    fun isNetworkAvailable(context: FragmentActivity?, typeNetworks: IntArray): Boolean {
+    fun isNetworkAvailable(context: androidx.fragment.app.FragmentActivity?, typeNetworks: IntArray): Boolean {
         try {
             val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             for (typeNetwork in typeNetworks) {
@@ -142,15 +142,15 @@ object Utils {
     }
 
 
-    fun hideKeyBoard(activity: FragmentActivity?) {
+    fun hideKeyBoard(activity: androidx.fragment.app.FragmentActivity?) {
         val inputMethodManager = activity?.getSystemService(
-            FragmentActivity.INPUT_METHOD_SERVICE
+            androidx.fragment.app.FragmentActivity.INPUT_METHOD_SERVICE
         ) as InputMethodManager
 
 
         if (inputMethodManager.isAcceptingText) {
             inputMethodManager.hideSoftInputFromWindow(
-                activity.currentFocus.windowToken, 0
+                activity.currentFocus!!.windowToken, 0
             )
         }
 
@@ -158,7 +158,7 @@ object Utils {
     }
 
 
-    fun showOptionDialog(activity: FragmentActivity?, address: String?) {
+    fun showOptionDialog(activity: androidx.fragment.app.FragmentActivity?, address: String?) {
         val mDialogView = LayoutInflater.from(activity).inflate(io.xels.xelsandroidapp.R.layout.address_dialog, null)
         //AlertDialogBuilder
         val mBuilder = AlertDialog.Builder(activity)
@@ -189,7 +189,7 @@ object Utils {
         }
     }
 
-    private fun showQrCode(activity: FragmentActivity?, address: String?) {
+    private fun showQrCode(activity: androidx.fragment.app.FragmentActivity?, address: String?) {
         var qrEcode: QRGEncoder? = null
         var bitmap: Bitmap? = null
         val manager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager?
@@ -221,7 +221,7 @@ object Utils {
     }
 
 
-    fun shareInformation(activity: FragmentActivity?, address: String?) {
+    fun shareInformation(activity: androidx.fragment.app.FragmentActivity?, address: String?) {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.type = "text/plain"
         shareIntent.putExtra(Intent.EXTRA_TEXT, address)
@@ -229,7 +229,7 @@ object Utils {
     }
 
 
-    fun showAlertDialg(activity: FragmentActivity?) {
+    fun showAlertDialg(activity: androidx.fragment.app.FragmentActivity?) {
         val builder = AlertDialog.Builder(activity)
 
         // Set the alert dialog title
@@ -260,7 +260,7 @@ object Utils {
         dialog.show()
     }
 
-    fun showTransactionSuccess(activity: FragmentActivity?) {
+    fun showTransactionSuccess(activity: androidx.fragment.app.FragmentActivity?) {
         val builder = AlertDialog.Builder(activity)
 
         // Set the alert dialog title

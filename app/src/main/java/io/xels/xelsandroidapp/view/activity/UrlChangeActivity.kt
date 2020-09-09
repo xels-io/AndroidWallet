@@ -1,7 +1,7 @@
 package io.xels.xelsandroidapp.view.activity
 
 import android.os.Bundle
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -13,7 +13,7 @@ import io.xels.xelsandroidapp.ulits.AppConstance
 import io.xels.xelsandroidapp.ulits.PreferenceManager
 import io.xels.xelsandroidapp.ulits.Utils
 
-class UrlChangeActivity : FragmentActivity(), View.OnClickListener {
+class UrlChangeActivity : androidx.fragment.app.FragmentActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
 

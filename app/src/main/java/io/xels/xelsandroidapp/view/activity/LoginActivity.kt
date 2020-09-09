@@ -1,7 +1,7 @@
 package io.xels.xelsandroidapp.view.activity
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -11,8 +11,8 @@ import io.xels.xelsandroidapp.ulits.AppConstance
 import io.xels.xelsandroidapp.ulits.PreferenceManager
 import io.xels.xelsandroidapp.ulits.Utils
 import kotlinx.android.synthetic.main.activity_login.*
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import io.xels.xelsandroidapp.view_model.LoginViewModel
 
 

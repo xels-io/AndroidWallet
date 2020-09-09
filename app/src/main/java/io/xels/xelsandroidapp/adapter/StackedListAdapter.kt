@@ -1,6 +1,6 @@
 package io.xels.xelsandroidapp.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,7 @@ class StackedListAdapter(
     var body: HistoryApiResponseModel?/*,var context:FragmentActivity*/,
     var type: Int
 ) :
-    RecyclerView.Adapter<StackedListAdapter.ViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<StackedListAdapter.ViewHolder>() {
 
 
     var amount: BigDecimal? = null
@@ -90,7 +90,7 @@ class StackedListAdapter(
 
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         val dateTxtView: TextView = itemView.findViewById(R.id.dateTxtView)
         val amountTxtView: TextView = itemView.findViewById(R.id.amountTxtView)

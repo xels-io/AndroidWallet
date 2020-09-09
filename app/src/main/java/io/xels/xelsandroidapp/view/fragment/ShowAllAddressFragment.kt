@@ -2,9 +2,9 @@ package io.xels.xelsandroidapp.view.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +28,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ShowAllAddressFragment : Fragment(), View.OnClickListener {
+class ShowAllAddressFragment : androidx.fragment.app.Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.usedBtn -> {
@@ -150,9 +150,14 @@ class ShowAllAddressFragment : Fragment(), View.OnClickListener {
             noData?.visibility = View.GONE
             allAddress?.visibility = View.VISIBLE
             showAllAddressAdapter = ShowAllAddressAdapter(response)
-            val mLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+            val mLayoutManager =
+                androidx.recyclerview.widget.LinearLayoutManager(
+                    activity,
+                    androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+                    false
+                )
             allAddress.setLayoutManager(mLayoutManager)
-            allAddress.setItemAnimator(DefaultItemAnimator())
+            allAddress.setItemAnimator(androidx.recyclerview.widget.DefaultItemAnimator())
             allAddress.setAdapter(showAllAddressAdapter)
             allAddress.setHasFixedSize(true)
         } else {
