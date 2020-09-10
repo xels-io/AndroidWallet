@@ -1,19 +1,18 @@
 package io.xels.xelsandroidapp.adapter
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import io.xels.xelsandroidapp.R
-import io.xels.xelsandroidapp.response_model.HistoryApiResponseModel
+import io.xels.xelsandroidapp.model.ListAdapterData
 import io.xels.xelsandroidapp.ulits.AppConstance
 import io.xels.xelsandroidapp.ulits.Utils
 import java.math.BigDecimal
 
 class StackedListAdapter(
-    var body: HistoryApiResponseModel?/*,var context:FragmentActivity*/,
+    var body: ArrayList<ListAdapterData>/*,var context:FragmentActivity*/,
     var type: Int
 ) :
     androidx.recyclerview.widget.RecyclerView.Adapter<StackedListAdapter.ViewHolder>() {
@@ -31,23 +30,23 @@ class StackedListAdapter(
 
 
     override fun getItemCount(): Int {
-        return body!!.innerMsg.history[0].transactionsHistory.size
+        return body.size
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
 
 
         if (type == 0) {
-            when (body!!.innerMsg.history[0].transactionsHistory.get(p1).type) {
+            when (body[p1].type) {
                 "staked" -> {
                     p0.fromAddressTxtView.text =
-                        body!!.innerMsg.history[0].transactionsHistory.get(p1).toAddress
+                        body!!.get(p1).toAddress
                     p0.statusImage.setBackgroundResource(R.drawable.stake)
                     p0.status.text = "Hybrid Reward"
 
 
                     amount = BigDecimal.valueOf(
-                        body!!.innerMsg.history[0].transactionsHistory.get(p1).amount.div(
+                        body!!.get(p1).amount.div(
                             AppConstance.shatoshi
                         )
                     )
@@ -55,32 +54,32 @@ class StackedListAdapter(
                     p0.amountTxtView.text = amount.toString() + " XELS"
                     p0.dateTxtView.text =
                         Utils.convertTimeToDate(
-                            body!!.innerMsg.history[0].transactionsHistory.get(
+                            body!!.get(
                                 p1
-                            ).timestamp
+                            ).timeStamp
                         )
 
 
                 }
             }
         } else if (type == 1) {
-            when (body!!.innerMsg.history[0].transactionsHistory.get(p1).type.toLowerCase()) {
+            when (body!!.get(p1).type.toLowerCase()) {
                 "mined" -> {
                     p0.fromAddressTxtView.text =
-                        body!!.innerMsg.history[0].transactionsHistory.get(p1).toAddress
+                        body!!.get(p1).toAddress
                     p0.statusImage.setBackgroundResource(R.drawable.stake)
                     p0.status.text = "Pow Reward"
 
 
                     amount = BigDecimal.valueOf(
-                        body!!.innerMsg.history[0].transactionsHistory.get(p1).amount.div(
+                        body!!.get(p1).amount.div(
                             AppConstance.shatoshi
                         )
                     )
 
                     p0.amountTxtView.text = amount.toString() + " XELS"
                     p0.dateTxtView.text =
-                        Utils.convertTimeToDate(body!!.innerMsg.history[0].transactionsHistory.get(p1).timestamp)
+                        Utils.convertTimeToDate(body!!.get(p1).timeStamp)
 
 
                 }

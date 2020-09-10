@@ -4,9 +4,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +11,7 @@ import android.widget.TextView
 import io.xels.xelsandroidapp.R
 import io.xels.xelsandroidapp.adapter.StackedListAdapter
 import io.xels.xelsandroidapp.interfaces.ToolBarControll
+import io.xels.xelsandroidapp.model.ListAdapterData
 import io.xels.xelsandroidapp.retrofit.ApiInterface
 import io.xels.xelsandroidapp.view_model.HistoryViewModel
 import kotlinx.android.synthetic.main.fragment_stacked.*
@@ -27,7 +25,9 @@ class StackedFragment : androidx.fragment.app.Fragment() {
     lateinit var stackedAdapet: StackedListAdapter
     private var historyViewModel: HistoryViewModel? = null
     private var type: Int = 0;
-    private var size=0;
+    private var  data= ArrayList<ListAdapterData>()
+    lateinit var modelClass:ListAdapterData
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         historyViewModel = ViewModelProviders.of(this).get(HistoryViewModel::class.java)
@@ -74,10 +74,17 @@ class StackedFragment : androidx.fragment.app.Fragment() {
                                 if (i.type.equals("staked")) {
                                     noData.visibility = View.GONE
 
-                                    stackedAdapet = StackedListAdapter(historyResponse, type)
-                                    stacked_rv.setAdapter(stackedAdapet)
+
+                                    modelClass=ListAdapterData(i.amount,i.toAddress,i.type,i.timestamp)
+
+                                    data.add(modelClass)
+
                                 }
                             }
+
+                            stackedAdapet = StackedListAdapter(data, type)
+                            stacked_rv.setAdapter(stackedAdapet)
+
                         } else {
                             noData.text = "You have no hybrid reward"
                             noData.visibility = View.VISIBLE
@@ -86,29 +93,39 @@ class StackedFragment : androidx.fragment.app.Fragment() {
 
 
                     } else if (type == 1) {
-                        for (i in historyResponse.innerMsg.history[0].transactionsHistory) {
+
+                        if (historyResponse.innerMsg.history[0].transactionsHistory.size>0){
+
+                            for (i in historyResponse.innerMsg.history[0].transactionsHistory) {
 
 
-                            if (i.type.toLowerCase().equals("mined")
-                            ) {
-                                noData.visibility = View.GONE
+                                if (i.type.toLowerCase().equals("mined")
+                                ) {
+                                    noData.visibility = View.GONE
+                                    modelClass=ListAdapterData(i.amount,i.toAddress,i.type,i.timestamp)
+                                    data.add(modelClass)
+                                }
 
-                                stackedAdapet = StackedListAdapter(historyResponse, type)
 
-                                stacked_rv.setAdapter(stackedAdapet)
-                            } else {
-                                noData.text = "You have no pow reward"
-                                noData.visibility = View.VISIBLE
 
                             }
+
+                            stackedAdapet = StackedListAdapter(data, type)
+                            stacked_rv.setAdapter(stackedAdapet)
+
+
+
+
+                        }
+                        else {
+                            noData.text = "You have no pow reward"
+                            noData.visibility = View.VISIBLE
 
                         }
 
                     }
 
 
-                } else {
-                    noData.visibility = View.GONE
                 }
 
             } else {
@@ -145,4 +162,5 @@ class StackedFragment : androidx.fragment.app.Fragment() {
     }
 
 }
+
 
